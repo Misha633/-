@@ -7,31 +7,36 @@ class Node:
         self.x = x
         self.y = y
         self.d = d
+        self.last_d = None
         self.size = size
         self.parent = parent
         self.child = child
         self.color = color
+        self.dir = None
         
     def move(self):
         # 0 - вверх, 1 - вправо, 2 - вниз, 3 - влево
         if self.d == 0:
-            dir = (0, -self.size)
+            self.dir = (0, -1)
         if self.d == 1:
-            dir = (self.size, 0)
+            self.dir = (1, 0)
         if self.d == 2:
-            dir = (0, self.size)
+            self.dir = (0, 1)
         if self.d == 3:
-            dir = (-self.size, 0)
-        self.x += dir[0]
-        self.y += dir[1]
-        if self.child:
-            self.child.d + self.d
-    
-    
+            self.dir = (-1, 0)
+        self.x += self.dir[0]
+        self.y += self.dir[1]
+        if self.parent is not None:
+            self.d = self.parent.last.d
     
     
     def draw(self, sc):
         pygame.draw.rect(sc, self.color, (self.x * self.size, self.y * self.size, self.size, self.size))
+        
+    def add_child(self):
+        if self.child is not None:
+            return
+        self.child = Node(self.x - self.dir[0], self.y - self.dir[1], self.last_d, self.size, self, None, self.color)
              
 def generate_apple(snake, num_cells_x, num_cells_y):
     all_cells = [i for i in range(num_cells_x * num_cells_y)]
@@ -41,6 +46,19 @@ def generate_apple(snake, num_cells_x, num_cells_y):
     x = random_pos % num_cells_y
     y = random_pos // num_cells_x
     return Node(x, y, -1, 50, None, None, (255, 0, 0))
+
+def check_collisions(snake, apple, num_cells_x, num_cells_y):
+    head = snake[0]
+    for i in range(len(snake)):
+        if i == 0:
+            continue
+        if head.x == snake[i].x and head.y == snake[i].y:
+            return 1
+    if head.x > num_cells_x or head.x < 0 or head.y > num_cells_y or head.y < 0:
+        return 1
+    if head.x == apple.x and head.y == apple.y:
+        return 2
+    return None
         
     
 WIDTH, HEIGHT = 500, 500
@@ -52,15 +70,43 @@ snake = [Node(random.randint(2, num_cells_x - 2), random.randint(2, num_cells_y 
 apple = generate_apple(snake, num_cells_x, num_cells_y)
 
 sc = pygame.display.set_mode((WIDTH, HEIGHT))
+timer = 1
 
 while True:
+    sc.fill((0, 0, 0))
     for event in pygame.event.get():
         pass
-    for cell in snake:
+    
+    keys = pygame.key.get_pressed()
+    if keys[pygame.K_w]:
+        snake[0].d = 0
+    if keys[pygame.K_d]:
+        snake[0].d = 1
+    if keys[pygame.K_s]:
+        snake[0].d = 2
+    if keys[pygame.K_a]:
+        snake[0].d = 3
+        
+        
+    if timer >= 100:    
+       for cell in snake:
+           cell.move()
+       timer = 0
+       
+       collisions = check_collisions(snake, apple, num_cells_x, num_cells_y)
+       if collisions == 1:
+            break
+       if collisions == 2:
+            snake[-1].add_child()
+            snake.append(snake[-1].child)
+            apple = generate_apple(snake, num_cells_x, num_cells_y)
+        
+    timer += 1    
+    for cell in snake:   
         cell.draw(sc)
     apple.draw(sc)
     pygame.display.update()
-    pygame.time.delay(60)
+    pygame.time.delay(10)
 
 
 
