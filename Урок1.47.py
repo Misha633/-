@@ -1,0 +1,15 @@
+print("Привествую, я программа по вычеслению среднего арифметического до 10 чисел!")
+print("Для этого в столбик напишите числа сколько вам нужно. Если их меньше чем 10, то оставляйте 0 до конца столбика!")
+ch1 = input()
+ch2 = input()
+ch3 = input()
+ch4 = input()
+ch5 = input()
+ch6 = input()
+ch7 = input()
+ch8 = input()
+ch9 = input()
+ch10 = input()
+print("Среднее арифметическое чисел:", (int(ch1) + int(ch2) + int(ch3) + int(ch4) + int(ch5) + int(ch6) + int(ch7) + int(ch8) + int(ch9) + int(ch10)) / 2)
+
+
