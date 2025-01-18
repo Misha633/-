@@ -1,25 +1,24 @@
-import pyautogui
-import time
+print('Привествую, для входа введите логин и пароль!')
+print('Ваш логин?')
 
-print('Здраствуйте введите логин и пароль...')
-time.sleep(1)
-text = pyautogui.prompt(text='Введите ваш логин:', title='Защитник', default='')
-text1 = pyautogui.prompt(text='Введите ваш пароль:', title='Защитник', default='')
-if text == 'Misha123' and text1 == '12345':
-    print('«Добро пожаловать,', text, '!')
-else:
-    print('Логин или пароль неверен!')
-print('Спасибо, что пользуетесь технологиями Umbrella Corporation!')
+a1 = 'wasd'
+b1 = 1234
 
-
-
-
-
-
-
-
-
-
+while True:
+    a = input()
+    if a == a1:
+        print('Отлично!')
+        while True:
+            print('Какой ваш пароль?')
+            b = int(input())
+            if b == b1:
+                print('Вход воспроизведён!!!')
+                break
+            else:
+                print('Попробуйте ещё раз!')
+    else:
+        print('Поробуйте ещё раз!')
+        
 
 
 

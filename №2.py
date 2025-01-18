@@ -1,14 +1,37 @@
-import pyautogui
+print('Привествую, для входа введите логин и пароль!')
+print('Ваш логин?')
 
-file = open("123.txt", "r", encoding="utf-8")
-a = int(file.read())
+a1 = 'wasd'
+b1 = '1234'
 
-if a <= 10:
-    text = pyautogui.alert(text=f'Принято, ваш вес в {a} кг не привышает нормы!', title='Сообщение')
-else:
-    text = pyautogui.alert(text=f'Вес слишком большой! Он превышает норму на {a - 10} кг!', title='Сообщение')
-    
-print('Самолёт вылетает через 2 часа!')
+while True:
+    a = input()
+    if a == a1:
+        print('Отлично!')
+        while True:
+            print('Какой ваш пароль?')
+            b = input()
+            if b == b1:
+                print('Вход воспроизведён!!!')
+                break
+            else:
+                print('Неверный пароль,попробуйте ещё раз!')
+    else:
+        print('Неверный логин, поробуйте ещё раз!')
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
