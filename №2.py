@@ -1,28 +1,16 @@
-print('Привествую, для входа введите логин и пароль!')
-print('Ваш логин?')
-
-a1 = 'wasd'
-b1 = '1234'
-
+import turtle
+turtle.home()
 while True:
-    a = input()
-    if a == a1:
-        print('Отлично!')
-        while True:
-            print('Какой ваш пароль?')
-            b = input()
-            if b == b1:
-                print('Вход воспроизведён!!!')
-                break
-            else:
-                print('Неверный пароль,попробуйте ещё раз!')
+    a = turtle.textinput('Команда', 'Введите команду:')
+    if a == 'Стоп' or a == 'стоп':
+        break
     else:
-        print('Неверный логин, поробуйте ещё раз!')
-        
-
-
-
-
+        if type(a) != int:
+            a = len(a)
+            turtle.forward(a)
+        else:
+            turtle.forward(a)
+            
 
 
 
