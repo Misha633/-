@@ -1,52 +1,31 @@
-import turtle
-import sys
+import pyautogui
+import time
 
-turtle.home()
-while True:
-    a = turtle.textinput('Команда', 'Введите команду:')
-    if a == 'Стоп' or a == 'стоп':
-        break
-    elif a == 'Поднять' or a == 'поднять':
-        turtle.penup()
-    elif a == 'опустить' or a == 'Опустить':
-        turtle.pendown()
-    elif a == 'Вперед' or a == 'вперед':
-        v = turtle.textinput('Введите на сколько шагов вы хотите двинуться вперёд', 'Введите команду:')
-        v = int(v)
-        turtle.forward(v)
-    elif a == 'Назад' or a == 'назад':
-        v = turtle.textinput('Введите на сколько шагов вы хотите двинуться назад', 'Введите команду:')
-        v = int(v)
-        turtle.backward(v)
-    elif a == 'Направо' or a == 'направо':
-        v = turtle.textinput('Введите на сколько градусов вы хотите повернуться направо', 'Введите команду:')
-        v = int(v)
-        turtle.right(v)
-    elif a == 'Налево' or a == 'налево':
-        v = turtle.textinput('Введите на сколько градусов вы хотите повернуться направо', 'Введите команду:')
-        v = int(v)
-        turtle.left(v)
-    elif a == 'толщина' or a == 'Толщина':
-        v = turtle.textinput('Назовите толщину своего пера', 'Введите команду:')
-        v = int(v)
-        turtle.pensize(v)
-    elif a == 'Цвет' or a == 'цвет':
-        v = turtle.textinput('Назовите цвет своего пера', 'Введите команду:')
-        v = int(v)
-        turtle.pencolor(v)
-    else:
-        print('Неизвестная команда, попроуйте ещё раз!')
+print(10)
+time.sleep(1)
+print(9)
+time.sleep(1)
+print(8)
+time.sleep(1)
+print(7)
+time.sleep(1)
+print(6)
+time.sleep(1)
+print(5)
+time.sleep(1)
+print(4)
+time.sleep(1)
+print(3)
+time.sleep(1)
+print(2)
+time.sleep(1)
+print(1)
+time.sleep(1)
+pyautogui.hotkey('win', 'r')
+time.sleep(1)
 
-
-
-
-
-
-
-
-
-
-
+pyautogui.typewrite('https://yandex.ru/video/preview/146466454936222725')
+pyautogui.press('enter')
 
 
 

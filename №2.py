@@ -1,30 +1,19 @@
-import turtle
-turtle.home()
-while True:
-    a = turtle.textinput('Команда', 'Введите команду:')
-    if a == 'Стоп' or a == 'стоп':
-        break
-    else:
-        if type(a) != int:
-            a = len(a)
-            turtle.forward(a)
-        else:
-            turtle.forward(a)
-            
+import pyautogui
+import time
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+v = int(input('Сколько раз мне кликнуть? '))
+i = int(input('С интервалом во сколько секунд? '))
+while v > 0:
+    v -= 1
+    pyautogui.click()
+    time.sleep(i)
+  
+  
+  
+  
+  
+  
+  
 
 
 
