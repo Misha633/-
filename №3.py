@@ -1,18 +1,18 @@
-k = 0
-p = 11
+g = 1000
 
-file = open("температура.txt", "r", encoding="utf-8")
-while p > 0:
-    p -= 1
-    t = int(file.readline())
-    print(t)
-    if t > 0:
-        k += 1
-        
-print('Было', k ,'дней со средней температурой выше нуля')
-        
+
+file = open("Грузы в контейнерах.txt", "r", encoding="utf-8")
+for a in file.readlines():
+    a = int(a)
+    print('Вес груза: ', a)
+    if a >= g:
+        print('Слишком тяжело!')
+    else:
+        print('Принято!')
     
     
+file.close()   
+
 
 
 

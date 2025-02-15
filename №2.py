@@ -1,21 +1,23 @@
-import pyautogui
-import time
-
-v = int(input('Сколько раз мне кликнуть? '))
-i = int(input('С интервалом во сколько секунд? '))
-while v > 0:
-    v -= 1
-    pyautogui.click()
-    time.sleep(i)
-  
-  
-  
-  
-  
-  
-  
+k = 0
+while True:
+    file = open("строчный файл.txt", "r", encoding="utf-8")
+    t = file.readline()
+    print(t)
+    for a in t:
+        print(t)
+        k += 1
+    
 
 
 
-
-
+print('Количевство строк', k)  
+file.close()       
+    
+    
+    
+    
+    
+    
+    
+    
+    

@@ -1,31 +1,26 @@
-import pyautogui
-import time
+k = 0
+a = input('Введите любое слово! ')
+for b in a:
+    print(b)
+    if b == 'о':
+        k += 1
+    
+print('Количевство О в слове', k)
 
-print(10)
-time.sleep(1)
-print(9)
-time.sleep(1)
-print(8)
-time.sleep(1)
-print(7)
-time.sleep(1)
-print(6)
-time.sleep(1)
-print(5)
-time.sleep(1)
-print(4)
-time.sleep(1)
-print(3)
-time.sleep(1)
-print(2)
-time.sleep(1)
-print(1)
-time.sleep(1)
-pyautogui.hotkey('win', 'r')
-time.sleep(1)
 
-pyautogui.typewrite('https://yandex.ru/video/preview/146466454936222725')
-pyautogui.press('enter')
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
