@@ -1,23 +1,28 @@
-k = 0
-while True:
-    file = open("строчный файл.txt", "r", encoding="utf-8")
-    t = file.readline()
-    print(t)
-    for a in t:
-        print(t)
-        k += 1
-    
+
+file = open("data0.txt", "r", encoding="utf-8")
+r = file.read()
+file.close()
+
+
+for i in range(1, 9):
+    print('...')
+    file = open(f"data{i}.txt", "w", encoding="utf-8")
+    r2 = file.write(r)
+    file.close()
 
 
 
-print('Количевство строк', k)  
-file.close()       
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
+
+
+
+
+
+
+

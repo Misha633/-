@@ -1,26 +1,27 @@
-k = 0
-a = input('Введите любое слово! ')
-for b in a:
-    print(b)
-    if b == 'о':
-        k += 1
+file = open("1\data.txt", "r", encoding="utf-8")
+r = file.read()
+file.close()
+
+
+for i in range(1, 11):
+    print('...')
+    file = open(f"{i}\data.txt", "w", encoding="utf-8")
+    r2 = file.write(r)
+    file.close()
     
-print('Количевство О в слове', k)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
