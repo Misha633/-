@@ -1,11 +1,18 @@
-for i in range(1, 47, 9):
-    print(i)
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+arr = ['Зебра','Курица','Змея','Кит']
+print('Слово под каким номером заменить, а также на какое?')
+a = int(input())
+a1 = input()
+
+
+arr.pop(a)
+arr.insert(a, a1)
+
+print(arr)
+
+
+
+
+
+
+

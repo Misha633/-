@@ -1,27 +1,25 @@
-file = open("1\data.txt", "r", encoding="utf-8")
-r = file.read()
-file.close()
+
+a = ['яблоко', 'томат', 'ананас', 'апельсин', 'кокос']
+v1 = input('На какое слово мне заменить элемент 0 в списке? ')
+v2 = input('На какое слово мне заменить элемент 4 в списке? ')
+
+a.pop(0)
+a.pop(3)
+a.append(v2)
+a.insert(0, v1)
+print(a)
 
 
-for i in range(1, 11):
-    print('...')
-    file = open(f"{i}\data.txt", "w", encoding="utf-8")
-    r2 = file.write(r)
-    file.close()
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
+
+
+
+
+
+
