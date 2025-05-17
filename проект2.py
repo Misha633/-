@@ -19,7 +19,7 @@ while dengi > 0:
     q = 0
     mmm = input('Сыграем? ')
     print('**************************************')
-    if mmm == 'Да' or mmm == 'да':
+    if mmm.lower() == 'да':
         print('Запускаю!')
         print('**************************************')
             
@@ -55,20 +55,17 @@ while dengi > 0:
         else:
             a2 = [0, 3]
             
-        for i in a2:
-            if i == r:
-                print('Поздравляю, ты удвоил свой выигрыш!')
-                print('**************************************')
-                money = money + (s * 2)
-                q = 1
-                dengi = money
-                money = str(money)
-                file = open("Money.txt", "w", encoding="utf-8")
-                text = file.write(money)
-                file.close()
-               
-    
-        if q == 0:
+        if r in a2:
+            print('Поздравляю, ты удвоил свой выигрыш!')
+            print('**************************************')
+            money = money + (s * 2)
+            q = 1
+            dengi = money
+            money = str(money)
+            file = open("Money.txt", "w", encoding="utf-8")
+            text = file.write(money)
+            file.close()
+        else:
             print('Ты проиграл!')
             print('**************************************')
             money = money - s
@@ -92,6 +89,8 @@ print('Ой, вы проиграли все свои деньги, вас счё
 file = open("Money.txt", "w", encoding="utf-8")
 dengi = file.write('0')
 file.close()
+
+
 
 
 
